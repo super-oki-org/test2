@@ -16,7 +16,9 @@
     "vanilla:build": "nx run vanilla:build",
     "vanilla:serve": "nx run vanilla:serve",
     "vanilla:lint": "nx run vanilla:lint",
-    "vanilla:stylelint": "nx run vanilla:stylelint"
+    "vanilla:stylelint": "nx run vanilla:stylelint",
+    "predeploy": "npm run vanilla:build",
+    "deploy": "gh-pages -d dist/apps/vanilla"
   },
   "private": true,
   "dependencies": {
