@@ -18,7 +18,7 @@
     "vanilla:serve": "nx run vanilla:serve",
     "vanilla:lint": "nx run vanilla:lint",
     "vanilla:stylelint": "nx run vanilla:stylelint",
-    "predeploy": "npm run vanilla:build",
+    "predeploy": "npm run vanilla:build --baseHref=/test2/",
     "deploy": "gh-pages -d dist/apps/vanilla"
   },
   "private": true,
@@ -83,6 +83,7 @@
     "eslint-plugin-react": "7.30.0",
     "eslint-plugin-react-hooks": "4.5.0",
     "eslint-plugin-rxjs": "^5.0.2",
+    "gh-pages": "^4.0.0",
     "jest": "27.5.1",
     "jest-preset-angular": "~11.1.2",
     "nx": "14.3.5",
