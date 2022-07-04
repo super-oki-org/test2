@@ -9,7 +9,7 @@
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/react",
-        "baseHref": "/",
+        "baseHref": "/test2/",
         "configFile": "apps/react/vite.config.ts",
         "frameworkConfigFile": "@nxext/react/plugins/vite"
       },
