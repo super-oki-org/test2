@@ -1,0 +1,33 @@
+name: Deploy PR previews
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+concurrency: preview-${{ github.ref }}
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v2
+
+    - name: Install nodejs
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.15.0
+
+    - name: Install and Build
+      run: |
+        npm ci
+        npm run vanilla:build
+
+    - name: Deploy preview
+      uses: rossjrw/pr-preview-action@v1
+      with:
+        source-dir: dist/apps/vanilla
