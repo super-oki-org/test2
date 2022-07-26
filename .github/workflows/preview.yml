@@ -25,9 +25,10 @@ jobs:
     - name: Install and Build
       run: |
         npm ci
-        npm run vanilla:build
+        PR_NUMBER=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
+        npm run angular:build -- baseHref="/test2/pr-preview/pr-$(PR_NUMBER)/"
 
     - name: Deploy preview
       uses: rossjrw/pr-preview-action@v1
       with:
-        source-dir: dist/apps/vanilla
+        source-dir: dist/apps/angular

@@ -18,8 +18,8 @@
     "vanilla:serve": "nx run vanilla:serve",
     "vanilla:lint": "nx run vanilla:lint",
     "vanilla:stylelint": "nx run vanilla:stylelint",
-    "predeploy": "npm run vanilla:build",
-    "deploy": "gh-pages -d dist/apps/vanilla"
+    "predeploy": "npm run angular:build -- --baseHref /test2/",
+    "deploy": "gh-pages -d dist/apps/angular"
   },
   "private": true,
   "dependencies": {
