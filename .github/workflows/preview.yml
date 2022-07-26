@@ -26,8 +26,8 @@ jobs:
       run: |
         npm ci
         PR_NUMBER=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
-        BASE_HREF=baseHref=/test2/pr-preview/pr-$PR_NUMBER/
-        npm run angular:build -- $BASE_HREF
+        BASE_HREF=--baseHref=/test2/pr-preview/pr-$PR_NUMBER/
+        npm run angular:build -- $BASE_HREF 
 
     - name: Deploy preview
       uses: rossjrw/pr-preview-action@v1
